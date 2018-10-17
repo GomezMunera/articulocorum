@@ -1,0 +1,4 @@
+#ignorar articulo
+articulo/*.cls
+articulo/makefile
+articulo/*.bst
