@@ -157,18 +157,39 @@ Los lenguajes utilizados para cumplir dicha tarea fueron Html, Python (Server-Si
 La Programación de los distintos módulos que conforman la plataforma digital de la Red Sentir utiliza el patrón de arquitectura de software Modelo-Vista-Controlador, empleando para esto el diseño de programación orienta da objetos, con el cual se usa el principio de ``No Te Repitas'' o \textbf{DRY} (por sus siglas en inglés ``Don't Repeat Yourself'') permitiendo con esto un manejo más eficiente de cambios y a su ver proporcionar una mejor sincronización. Aunque con la tecnología usada en este desarrollo lo modifica un poco y lleva a hablar de un patrón Modelo-Vista-Template (MVT) en django. El patrón de programación MVT es análogo, el modelo continua siendo el modelo, en este caso, la vista describe que datos serán presentados, por lo que no configura una vista en si, sino más bien es un controlador que se llama vista, en el caso del template corresponden a las vistas del MVC, es decir, la forma en como son presentados los datos, por lo que los formularios van en template, estos formularios hacen peticiones a las vistas, y a su vez las vistas obtienen datos de los modelos.
 
 \subsubsection{Framework Django}
-Django es un framework para desarrollo web de código abierto basado $100\%$ en el lenguaje de programación Python (django esta escrito como una colección de librerías de Python) que utiliza el patrón de programación MVT~\citep{Hol2009, DjangoM}
+Django es un framework para desarrollo web de código abierto basado $100\%$ en el lenguaje de programación Python (django esta escrito como una colección de librerías de Python) que utiliza el patrón de programación MVT~\citep{Hol2009, DjangoM}.
 
+El objetivo principal de Django es facilitar la creación de sitios web complejos en los que se necesite desarrollar un software a la medida de los requerimientos de los clientes. Las principales ventajas de Django, es el énfasis que realiza en el re-uso, la conectividad y extensibilidad de componentes, además de la posibilidad de obtener desarrollos rápidos y estructurados como consecuencia de usar el principio \textbf{DRY}. A lo largo de todo el desarrollo realizado con el framework django, se utiliza el lenguaje de programación Python, como en las configuraciones del servidor, archivos, y en los modelos de datos~\citep{Wik2014}. Django además permite trabajar con un panel de administración para posibilitar a los encargados de mantener el sitio web una alimentación constante de contenido.
 
+\subparagraph*{Panel de Administración:}
 
-La meta fundamental de Django es facilitar la creación de sitios web complejos. Django pone énfasis en el re-uso, la conectividad y extensibilidad de componentes, el desarrollo rápido y el principio No te repitas (DRY, del inglés Don't Repeat Yourself). Python es usado en todas las partes del framework, incluso en configuraciones, archivos, y en los modelos de datos. 
+Para determinados tipos de sitios web, una interfaz de administración es una parte esencial de la infraestructura. En Django se tiene la posibilidad de utilizar su panel de administrador para la página web, la cual se trata de una interfaz basada en la Web, limitada a los administradores del sitio, que permite añadir, editar y eliminar el contenido del sitio, controlando el contenido que se va a publicar, la información que va a ser almacenada en la base de datos, además de los usuarios registrados o las participaciones que se hagan dentro de la página con el fin de servir de moderadores de contenido que son generados por los usuarios. 
 
+El enfoque de Django, es entonces la construcción de una interfaz de administración automática que permita a los administradores gestionar el contenido del sitio web de manera inmediata.
 
 \subsubsection{Framework Cherrypy}\label{sub:cherrypy}
 
 \subsection{Base de Datos}
+En general para el desarrollo de una aplicación web es necesario trabajar también en un back-end de base de datos, es precisamente la base de datos la que conforma una parte fundamental de cualquier aplicación al permitir almacenar toda la información procedente de los usuarios registrados (en el caso de la plataforma de la Red Sentir), de la información generada a lo largo del proyecto en los que se involucran todos los procesos de formación o la que pueda resultar de interés o necesidad para tomar estadísticas o para ser utilizada de manera posterior para alguna tarea determinada por parte del componente digital. Por ende, el propósito general de las bases de datos obtenidas dentro del proyecto, es el de manejar información de forma clara, coherente y ordenada un conjunto de datos que posteriormente se convertirán en información relevante para determinar el posicionamiento del proyecto o ubicación geográfica de los usuarios registrados y la forma en que puedan vincularse con los entes institucionales municipales. 
+
+El libro de Django~\citep{DjangoM} recomienda el uso de Postgres al alcanzar un balance entre estabilidad, confiabilidad, características y estabilidad. De igual manera el framework es compatible con numerosos tipos de bases de datos. Finalmente se ha elegido emplear MySQL como motor de la base de datos, y en la siguiente sección describiremos brevemente los diferentes tipos de bases de datos que son compatibles con Django y porque se decidió emplear MySQL en el trabajo.
+
 Para trabajar los datos que se manejan en la plataforma se hace por medio de bases de datos relacionales
 \subsubsection{Postgres}
+PostgreSQL es una potente herramienta de código abierto que utiliza y amplía el lenguaje SQL combinado con muchas funciones que almacenan y escalan de forma segura las cargas de trabajo de datos más complicadas. El mismo consiste en un sistema de gestión de bases de datos objeto-relacional basado en el proyecto POSTGRES de la universidad de Berkeley con más de 30 años de desarrollo~\citep{Postgres}. Postgres ofrece confiabilidad, integridad de datos, robustez, expansibilidad y portabilidad, además de contar con la ventaja del trabajo que puedan desarrollar las personas que constituyen la comunidad de código abierto y la posibilidad de brindar soluciones adaptables y de alto rendimiento que sea compatible con la plataforma. 
+
+Algunas de las características principales de Postgres son:
+
+\begin{itemize}
+\item Integra y soporta distintos tipos de datos.
+\item Presenta concurrencia en las tablas que proporcionan un mejor rendimiento.
+\item Permite la declaración de funciones propias, así como la definición de disparadores.
+\item Permite la administración de varios usuarios.
+\item Es posible utilizar herencia entre tablas, con lo cual al gestor de bases de datos se le incluye entre los gestores objeto-relacionales.
+\item Permite el uso de la herramienta de código abierto pgAdmin para la administración de la base de datos Postgresql a través de una interfaz administrativa gráfica~\citep{Pgadmin}.
+\end{itemize}
+
+Para utilizar Postgres es necesario instalar los paquetes psycopg o psycopg2.
 
 \subsection{Video Juego}
 Hablar de las diferentes herramientas utilizadas, tales como TexturePacker
