@@ -54,7 +54,7 @@
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\refname}{REFERENCIAS}
 
-\abstract Dentro del plan nacional de desarrollo 2014-2018 de Colombia se planteó la educación como un pilar fundamental, que sirviera como un mecanismo que permitiera una igualdad social al permitir nivelar las posibilidades de todos los Colombianos. Teniendo esto en cuenta, y al considerar el incremento acelerado en el uso de las tecnologías de la información y la comunicación, junto con la posibilidad de brindar una mayor cobertura en educación, que la corporación de estudiantes universitarios y profesionales de Marinilla (CORUM) desarrolló e implementó un proyecto llamado ``Red Sentir...Con-ciencia juvenil'' centrado en la prevención de embarazo adolescente, fortalecimiento del plan de vida, pensamiento crítico, autonomía y toma de decisiones consientes. El proyecto se deriva en tres componentes fundamentales que constituyen un proceso de formación integral con jóvenes entre 10 y 19 años del oriente Antioqueño, que les permite interactuar y relacionarse con padres, maestros y agentes institucionales. Los componentes relacionados son: (i) formación y socialización, (ii) mesa regional, y (iii) una plataforma digital. El presente artículo hace énfasis en las estrategias y desarrollos del componente digital para vincular la educación sexual, los derechos sexuales y reproductivos, el acceso a métodos anticonceptivos y la interacción con expertos. Para el desarrollo se creó una red social a través de diferentes tecnologías, que involucran desarrollo web, creación de bases de datos relacionales, configuración de servidores y desarrollo de videojuegos. Todas esto posible a través de distintos lenguajes de programación tales como, python, HTML, javascript, que configuran aplicaciones tanto desde el lado del cliente como aplicaciones desde el lado del servidor.\endabstract
+\abstract Dentro del plan nacional de desarrollo 2014-2018 de Colombia se planteó la educación como un pilar fundamental, donde el mismo sirviera como un mecanismo que permitiera una igualdad social y así nivelar las posibilidades de todos los Colombianos. Teniendo esto en cuenta, y al considerar el incremento acelerado en el uso de las tecnologías de la información y la comunicación, junto con la posibilidad de brindar una mayor cobertura en educación, como la corporación de estudiantes universitarios y profesionales de Marinilla (CORUM) desarrolló e implementó un proyecto llamado ``Red Sentir...Con-ciencia juvenil'' centrado en la prevención de embarazo adolescente, fortalecimiento del plan de vida, pensamiento crítico, autonomía y toma de decisiones consientes. El proyecto se deriva en tres componentes fundamentales que constituyen un proceso de formación integral con jóvenes entre 10 y 19 años del oriente Antioqueño, que les permite interactuar y relacionarse con padres, maestros y agentes institucionales. Los componentes mencionados son: (i) formación y socialización, (ii) mesa regional, y (iii) una plataforma digital. En el presente artículo se hace énfasis en las estrategias y desarrollos realizados por el componente digital en la creación de un entorno virtual que permitiera vincular la educación sexual, los derechos sexuales y reproductivos, el acceso a métodos anticonceptivos y la interacción con expertos. Para el desarrollo se creó una red social a través de diferentes tecnologías, que involucran desarrollo web, creación de bases de datos relacionales, configuración de servidores y desarrollo de videojuegos. Todas esto posible a través de distintos lenguajes de programación tales como, python, HTML, javascript, que configuran aplicaciones tanto desde el lado del cliente como aplicaciones desde el lado del servidor.\endabstract
 
 \noindent{\textbf{Keywords:}} Plataforma educativa, embarazo adolescente, Oriente Antioqueño, desarrollo web, desarrollo de videojuegos.\newline
 
@@ -157,9 +157,17 @@ Los lenguajes utilizados para cumplir dicha tarea fueron Html, Python (Server-Si
 La Programación de los distintos módulos que conforman la plataforma digital de la Red Sentir utiliza el patrón de arquitectura de software Modelo-Vista-Controlador, empleando para esto el diseño de programación orienta da objetos, con el cual se usa el principio de ``No Te Repitas'' o \textbf{DRY} (por sus siglas en inglés ``Don't Repeat Yourself'') permitiendo con esto un manejo más eficiente de cambios y a su ver proporcionar una mejor sincronización. Aunque con la tecnología usada en este desarrollo lo modifica un poco y lleva a hablar de un patrón Modelo-Vista-Template (MVT) en django. El patrón de programación MVT es análogo, el modelo continua siendo el modelo, en este caso, la vista describe que datos serán presentados, por lo que no configura una vista en si, sino más bien es un controlador que se llama vista, en el caso del template corresponden a las vistas del MVC, es decir, la forma en como son presentados los datos, por lo que los formularios van en template, estos formularios hacen peticiones a las vistas, y a su vez las vistas obtienen datos de los modelos.
 
 \subsubsection{Framework Django}
-Django es un framework para desarrollo web de código abierto basado $100\%$ en el lenguaje de programación Python (django esta escrito como una colección de librerías de Python) que utiliza el patrón de programación MVT~\citep{Hol2009, DjangoM}.
+Django es un framework para desarrollo web de código abierto basado $100\%$ en el lenguaje de programación Python (django esta escrito como una colección de librerías de Python) que utiliza el patrón de programación MVT~\citep{Hol2009, DjangoM}. La figura~\ref{fig:esq_Django} muestra el esquema interno utilizado por el framework Django.
 
 El objetivo principal de Django es facilitar la creación de sitios web complejos en los que se necesite desarrollar un software a la medida de los requerimientos de los clientes. Las principales ventajas de Django, es el énfasis que realiza en el re-uso, la conectividad y extensibilidad de componentes, además de la posibilidad de obtener desarrollos rápidos y estructurados como consecuencia de usar el principio \textbf{DRY}. A lo largo de todo el desarrollo realizado con el framework django, se utiliza el lenguaje de programación Python, como en las configuraciones del servidor, archivos, y en los modelos de datos~\citep{Wik2014}. Django además permite trabajar con un panel de administración para posibilitar a los encargados de mantener el sitio web una alimentación constante de contenido.
+
+\begin{figure}[t]
+\centering
+%\includegraphics[width=4in,height=3.5in]{diagrama_MVC.png}
+\includegraphics[width=0.4\textwidth]{diagrama_MVC.png}
+\caption{Esquema del MVT utilizado por Django.}
+\label{fig:esq_Django}
+\end{figure}
 
 \subparagraph*{Panel de Administración:}
 
@@ -168,6 +176,20 @@ Para determinados tipos de sitios web, una interfaz de administración es una pa
 El enfoque de Django, es entonces la construcción de una interfaz de administración automática que permita a los administradores gestionar el contenido del sitio web de manera inmediata.
 
 \subsubsection{Framework Cherrypy}\label{sub:cherrypy}
+CherryPy es un framework web con programación orientada a objetos diseñado para permitir la construcción de aplicaciones web de la misma manera que se construiría cualquier otro programa Python orientado a objetos, por lo que lleva a un código fuente más pequeño desarrollado en menos tiempo.
+
+CherryPy puede ser un servidor web en sí mismo o se puede lanzar a través de cualquier entorno compatible con WSGI. No se ocupa de tareas como la creación de plantillas para el renderizado de salida o el acceso al back-end. El framework es extensible con filtros, los cuales son llamados en puntos definidos en el procesamiento de peticiones/respuestas~\citep{Cherrypy}.
+
+Las principales características de Cherrypy son:
+
+\begin{itemize}
+	\item Servidor web WGSI compatible con HTTP/1.1.
+	\item Múltiples servidores HTTP (capacidad de escuchar varios puertos).
+	\item Soporte para cualquier otro servidor web o adaptador habilitado para WSGI, incluyendo Apache, 	IIS, lighttpd, mod\_python, FastCGI, SCGI y mod\_wsgi.
+	\item Herramientas incorporadas para codificar y autenticar.
+	\item Es un sistema flexible.
+	\item Las herramientas de CherryPy relacionan los eventos dentro del proceso de solicitud. Cada vez que el servidor CherryPy recibe una petición, hay un conjunto específico de pasos que debe seguir para manejar esa petición.
+\end{itemize}
 
 \subsection{Base de Datos}
 En general para el desarrollo de una aplicación web es necesario trabajar también en un back-end de base de datos, es precisamente la base de datos la que conforma una parte fundamental de cualquier aplicación al permitir almacenar toda la información procedente de los usuarios registrados (en el caso de la plataforma de la Red Sentir), de la información generada a lo largo del proyecto en los que se involucran todos los procesos de formación o la que pueda resultar de interés o necesidad para tomar estadísticas o para ser utilizada de manera posterior para alguna tarea determinada por parte del componente digital. Por ende, el propósito general de las bases de datos obtenidas dentro del proyecto, es el de manejar información de forma clara, coherente y ordenada un conjunto de datos que posteriormente se convertirán en información relevante para determinar el posicionamiento del proyecto o ubicación geográfica de los usuarios registrados y la forma en que puedan vincularse con los entes institucionales municipales. 
@@ -191,21 +213,45 @@ Algunas de las características principales de Postgres son:
 
 Para utilizar Postgres es necesario instalar los paquetes psycopg o psycopg2.
 
-\subsection{Video Juego}
-Hablar de las diferentes herramientas utilizadas, tales como TexturePacker
+\subsection{VideoJuego}
+Considerando los avances tecnológicos y las demandas crecientes de dispositivos virtuales para acceder a la información o divertirse, así como también la reducción en los precios de los mismos, o las políticas de inclusión de los países (en el caso de Colombia con el plan de desarrollo 2014-2018) lo que ha ocasionado que su uso se haya expandido cada vez más y se cree la necesidad de diferentes aplicaciones o herramientas tecnológicas. Es en este punto donde dentro de las estrategias digitales y sobre todo los video juegos juegan un papel importante al tener una gran influencia en el mercado, más que todo aquellos donde se pueda combinar un aprendizaje significativo con diversión.
+
+Para la programación de los videojuegos es necesario tener varias cosas en cuenta: (i) el uso de las diferentes ilustraciones que componen la parte gráfica del juego, las cuales brindaran una autenticidad al mismo, (ii) la capacidad computacional con la que se cuente, (iii) el conocimiento técnico dentro del equipo de trabajo, (iv) los tiempos establecidos, y (v) el público a quien va dirigido el juego. En este punto también es importante hablar de las herramientas, programas o entornos de desarrollo integrado (del inglés Integrated Development Environment `IDE') necesarias para realizar el videojuego, tales como: TexturePacker, Cocos creator, Dragon Bones, Clip Studio Paint, Corel, inkscape, toon boom, entre otros.
+
 \subsubsection{Cocos Creator}
+Cocos Creator es un paquete de herramientsa de desarrollo de juegos gratuita y multiplataforma que incluye una motor de juegos basado en Cocos2d-x. Cocos posibilita organizar el flujo de trabajo, gestión de recursos, edición de escenas a través de lienzos, previsualización del juego en desarrollo, depuración, inclusión de sonidos, efectos y animaciones, y construcción para la publicación del proyecto en diferentes dispositivos. Cocos ofrece la posibilidad de trabajar con JavaScript y así crear secuencias de juego por intermedio de comandos. Cocos vincula el editor de texto \textbf{visual code}, el cual da soporte en la depuración, resaltado de sintaxis y el autocompletado de lineas de código, permitiendo con esto que se pueda refinar y organizar la estructura de programación del juego. Todo este conjunto de herramientas proporcionada por Cocos es entonces una manera innovadora de organización a través de la interfaz de usuario gráfica con su editor de animación ofrecen una programación más comprensible~\citep{Cocos}.
 
 \subsubsection{Ilustraciones}
-mirar si se pone esto, pero no sé ni los programas ni la metodología utilizada para la ilustración 
+En el desarrollo de cualquier pieza visual o este caso de un videojuego es determinante las imagenes o ilustraciones que lo componen, tanto los personajes, los objetos, y así como los diferentes escenarios involucrados en el juego. Dentro de este proyecto se utilizaron diferentes programas que posibilitaron la realización de los mismos, tales como: Clip Studio Paint, Corel, inkscape, toon boom, entre otros.
 
-\section{Resultados}\label{sec:resultados}
+\subparagraph*{Clip Studio Paint:} Son un conjunto de aplicaciones de software de gráficos para los diferentes sistemas operativos, desarrollada por Celsys. Se utiliza principalmente para la creación digital de comics, manga, historietas, ilustraciones y animación en 2D~\citep{ClipP}.
+
+\subparagraph*{Toon boom:} Toon Boom Animation Inc. es una compañía de software especializada en software de producción de animación. Uno de los software Toon Boom, Toon Boom Animation Pro, el cual  es un software de animación más dirigido hacia los profesionales, esto porque ofrece contenido por la técnica de creación, animación y juegos de herramientas de composición~\citep{ToonB}. 
+
+\section{DESARROLLOS Y RESULTADOS}\label{sec:resultados}
+
+En la figura~\ref{fig:red} se muestra un diagrama de la estructura de la Red Sentir
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=6in,height=3.5in]{red.eps}
+\caption{Estructura de la Red Sentir.}
+\label{fig:red}
+\end{figure}
+
 
 Resultados: Plataforma digital en funcionamiento, información colgada, juego en funcionamiento, materiales pedagógicos con acceso virtual, enlaces con entidades del sector y aliados.  Sostenibilidad de la plataforma, actualización, noticias, enlaces, participación en foros, respuestas a dudas, motivación a participar.
 
-\section{CONCLUSIONES y PERSPECTIVAS}\label{sec:conclusiones}
+Para observar la aplicación web desarrollada por el componente digital de la Red Sentir, es necesario ingresar en el navegador~\url{www.redsentir.org}, allí se puede observar los diferentes resultados expuestos en el presente artículo.
 
 
-\newpage
+
+mirar si se pone esto, pero no sé ni los programas ni la metodología utilizada para la ilustración 
+
+\section{CONCLUSIONES Y PERSPECTIVAS}\label{sec:conclusiones}
+
+
+\clearpage
 \bibliographystyle{apa-good}
 \bibliography{biblio_digital}
 \end{document}
