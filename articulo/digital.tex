@@ -1,4 +1,4 @@
-% Formato modificado por CORUM para la escritura de artículo
+% Formato modificado por CORUM para el artículo
 
 % Si es formato ieee descomentar la siguiente linea
 %\documentclass[conference]{IEEEtran_ES}
@@ -108,7 +108,7 @@ En Colombia, de acuerdo a lo establecido en~\citep{Plan2014}, se busca fomentar 
 
 Por tal motivo, al ir relacionado con el plan nacional de desarrollo del país, en el que buscan impulsar el desarrollo de aplicaciones y contenidos digitales con impacto social en el que se fortalezcan las TIC y su rol en la sociedad, que la Red Sentir a través de la plataforma digital pretende llegar a una mayor cantidad de personas, sin importar su ubicación geográfica o su estado socioeconómico por medio de un espacio virtual entretenido y dedicado a la prevención del embarazo a una temprana edad y al fortalecimiento de los planes de vida, en el que puedan aprender, entender y apropiarse de los temas relacionados a la salud sexual, salud reproductiva, derechos sexuales y derechos reproductivos.
 
-Las principales características de la plataforma de la Red Sentir que la hace diferente a otros sitios web o plataformas virtuales identificadas (como las del ministerio de protección y salud del gobierno de Colombia~\citep{PagGob2018} o la de la secretaria de salud de Bogotá en alianza con la Fundación Santa Fe de Bogotá y Profamilia~\citep{Sexperto2018}) son: (i) contenido generado de forma agradable para los adolescentes y jóvenes, (ii) participación activa e interacción entre los jóvenes, (iii) juegos de video para la compresión de la sexualidad, (iv) discreción del entorno virtual para incentivar la participación de los jóvenes al ofrecer la posibilidad de participar de manera anónima y (v) públicos objetivos definidos, esto al desplegar dos interfaces diferentes dependiendo si se es joven o adulto.  
+Las principales características de la plataforma de la Red Sentir que la hace diferente a otros sitios web o plataformas virtuales identificadas (como las del ministerio de protección y salud del gobierno de Colombia~\citep{PagGob2018}, la de la secretaria de salud de Bogotá en alianza con la Fundación Santa Fe de Bogotá y Profamilia~\citep{Sexperto2018}, o la de consultas médicas~\citep{1DOC3}) son: (i) contenido generado de forma agradable para los adolescentes y jóvenes, (ii) participación activa e interacción entre los jóvenes, (iii) juegos de video para la compresión de la sexualidad, (iv) discreción del entorno virtual para incentivar la participación de los jóvenes al ofrecer la posibilidad de participar de manera anónima y (v) públicos objetivos definidos, esto al desplegar dos interfaces diferentes dependiendo si se es joven o adulto.  
 
 El artículo esta organizado de la siguiente manera: después de la introducción, en la sección~\ref{sec:propositos} se definen los propósitos para los cuales se creó la plataforma digital de la Red Sentir y la descripción de las vinculaciones con las autoridades municipales. En la sección~\ref{sec:herramientas} se especifican las herramientas, tecnologías, arquitecturas y además las configuraciones necesarias para la implementación. La sección~\ref{sec:resultados} se muestran los resultados obtenidos hasta el momento, presentando consigo los diferentes módulos que componen la plataforma y los video juegos elaborados. Finalmente en la última sección~\ref{sec:conclusiones} es dedicada a las conclusiones y las perspectivas de trabajo a futuro.
 
@@ -175,6 +175,8 @@ El objetivo principal de Django es facilitar la creación de sitios web complejo
 Para determinados tipos de sitios web, una interfaz de administración es una parte esencial de la infraestructura. En Django se tiene la posibilidad de utilizar su panel de administrador para la página web, la cual se trata de una interfaz basada en la Web, limitada a los administradores del sitio, que permite añadir, editar y eliminar el contenido del sitio, controlando el contenido que se va a publicar, la información que va a ser almacenada en la base de datos, además de los usuarios registrados o las participaciones que se hagan dentro de la página con el fin de servir de moderadores de contenido que son generados por los usuarios. 
 
 El enfoque de Django, es entonces la construcción de una interfaz de administración automática que permita a los administradores gestionar el contenido del sitio web de manera inmediata.
+
+\subparagraph*{Mapeador Objeto-Relacional (ORM):} En Django el ORM es el que permita interactuar constantemente con la base de datos, es el framework Django el encargado de traducir las operaciones sobre los objetos en sentencias SQL, las cuales van a ejecutarse sobre las tablas de la base de datos. Esto permite al programador más flexibilidad, al no tener que centrarse en estas acciones, sino que Django detectará que el programador está modificando o agregando un dato y se lo hará saber a la base de datos.
 
 \subsubsection{Framework Cherrypy}\label{sub:cherrypy}
 CherryPy es un framework web con programación orientada a objetos diseñado para permitir la construcción de aplicaciones web de la misma manera que se construiría cualquier otro programa Python orientado a objetos, por lo que lleva a un código fuente más pequeño desarrollado en menos tiempo.
@@ -337,9 +339,9 @@ Para observar la aplicación web desarrollada por el componente digital de la Re
 
 \begin{figure}[tbp]
   \centering
-	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{menor.png}\label{fig:menores}}
+	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{menor.png}\label{fig:menores}}
 	  \hspace{1mm}
- 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{mayor.png}\label{fig:mayores}}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{mayor.png}\label{fig:mayores}}
   \caption{Vista de la plataforma digital según la edad del usuario. (a) Menor de 19 años, (b) mayor de 19 años.}
   \label{fig:vista_plataforma}
 \end{figure}
@@ -381,27 +383,27 @@ Para observar la aplicación web desarrollada por el componente digital de la Re
 
 \begin{figure}[tbp]
   \centering
-	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{juego1.png}\label{fig:preventor}}
+	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{juego1.png}\label{fig:preventor}}
 	  \hspace{1mm}
- 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{juego2.png}\label{fig:dawn}}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{juego2.png}\label{fig:dawn}}
   \caption{Juegos disponibles en la plataforma digital de la Red Sentir.}
   \label{fig:juegos}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{guias.png}\label{fig:guias}}
+	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{guias.png}\label{fig:guias}}
 	  \hspace{1mm}
- 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{encuentros.png}\label{fig:encuentros}}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{encuentros.png}\label{fig:encuentros}}
   \caption{Módulo de formación disponible en la plataforma. (a) Guías de docentes, (b) encuentros locales.}
   \label{fig:formacion}
 \end{figure}
 
 \begin{figure}[tbp]
   \centering
-	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{planes.png}}
+	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{planes.png}}
 	  \hspace{1mm}
- 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=2.5in]{planes1.png}}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth,height=3in]{planes1.png}}
   \caption{Módulo Mesa Regional disponible en la plataforma. }
   \label{fig:mesa}
 \end{figure}
@@ -414,7 +416,21 @@ Para observar la aplicación web desarrollada por el componente digital de la Re
 \end{figure}
 
 \section{CONCLUSIONES Y PERSPECTIVAS}\label{sec:conclusiones}
+Con la búsqueda actual de los gobiernos nacionales de generar una mayor inclusión en toda la comunidad y evitar los factores de riesgos en los que están inmersos muchas de las personas (sobre todo los más jóvenes), que terminan en muchos de los casos reflejado con consecuencias que pueden truncar el plan de vida de los jóvenes o de la misma manera perpetuar los ciclos de la pobreza en que los adolescentes se desarrollan. De igual manera, no es solo la situación económica la que influye en los procesos educativos de los adolescentes, sino también se ve influenciado por factores demográficos, sociales, culturales y uno de los más importantes el acceso a las TIC. Es así, que el equipo de la Red Sentir abordó uno de esos factores de riesgo como lo es la problemática del embarazo a temprana edad, para generar una estrategia de intervención para evitar el embarazo adolescente, haciendo énfasis en los planes de vida, los derechos, el reconocimiento del territorio, el cuidado del cuerpo, el aprendizaje y el uso de métodos anticonceptivos y el fortalecimiento de los sueños. Todas el proceso llevado a cabo por el componente de formación se ven complementadas con una plataforma virtual realizada por el componente digital, como una estrategia para vincular, reforzar, y también lograr un mayor alcance en cuanto a las personas que participaron directamente de los semilleros. La plataforma en si pretende también ser un apoyo a los colegios, que junto con las proyecciones del país en acercar a la mayor parte del territorio y a su vez generar una apropiación de las TIC, sobre todo en las comunidades rurales.
 
+Desde lo técnico, el uso de los diferentes frameworks, permitieron la programación de una plataforma virtual cuyo objetivo es el de crear confianza en los más jóvenes, al funcionar como una red social orientada directamente a trabajar, hablar y formar sobre los temas de sexualidad, para que los jóvenes obtengan información que les ayude a experimentar, descubrir y vivir la sexualidad de una manera responsable. Con el desarrollo de la plataforma digital, se pudo incorporar y mezclar tecnologías junto con los respectivos lenguajes utilizados (Django, cherrypy, HTML, CSS, JavaScript, Postgresql) que llevaron consecuentemente en buen termino a un resultado final reflejando las fortalezas y lo indisciplinar del equipo de la Red Sentir.
+
+Tanto los productos como los resultados obtenidos por el proyecto, arrojan un análisis positivo y satisfactorio en todos los aspectos y desde los diferentes componentes. Esto indica en si, el asentamiento de una base para continuar interviniendo en las comunidades en las que este factor de riesgo es alto, dejando en si un trabajo que puede ser extendido, complementado y replicado para las demás comunidades en los que se considere pertinente implementar la estrategia. Dentro de las funcionalidades que puede tener la plataforma digital, las mismas pueden ampliarse e incorporar nuevas herramientas, ya que esta es una tarea de crecimiento continuo que debe adaptarse a nuevas tecnologías, siendo un proceso iterativo e incremental, aunque precisamente es eso lo que puede verse como una oportunidad, ya que dentro de lo digital, la necesidad de introducir nuevas mejoras y nuevos contenidos que complementen lo ya implementado es lo que permiten que se genere una confianza y un retorno a la plataforma, entre las funcionalidades identificadas para seguir trabajando dentro de la plataforma se plantean:
+
+\begin{itemize}
+\item Crear continuamente contenido para los jóvenes, padres y actores institucionales.
+\item Volverla una herramienta masiva, que sea implementada en las instituciones educativas dentro de un ámbito nacional, sirviendo de apoyo en la enseñanza de la sexualidad.
+\item Vincular a los educadores para generar trabajo colaborativo, con procesos de confianza.
+\item Mejorar y agregar los juegos existentes dentro de la plataforma, incorporando para ello más personas preocupadas por un aprendizaje con diversión, esto tiene que ver con las nuevas estrategias de e-learning, desde las cuales se ha demostrado que cuanto más entretenido se encuentre el estudiante más información puede retener, lo que conlleva que el estudiante puede aprender más y a su vez generarles una apropiación de las TIC de manera eficiente dentro de los entornos educativos.
+\item Aumentar la dificultad de los juegos a medida que se va avanzando y consiguiendo puntos. Dicha dificultad puede verse reflejada en mayor velocidad, aparición de nuevos personajes, uso de diferentes herramientas, movimientos, inclusión de nuevas animaciones, inclusión de información educativa o nuevos gráficos.
+\item Disponer de una tienda para compra de elementos, tales como métodos anticonceptivos.
+\item Tener un registro de los puntajes obtenidos en los juegos dentro de la base de datos, lo que permitirá tener una mejor estadística de los usuarios y nivel de juego, para realizar tratamientos posteriores.
+\end{itemize}
 
 \clearpage
 \bibliographystyle{apa-good}
