@@ -1,0 +1,198 @@
+El desarrollo de la red sentir siguió una serie de pasos que combinaron tanto la estructuración de la plataforma como la funcionalidad especifica de cada uno de los modulos que la conforman, a continuación se describe específicamente dicho proceso: 
+
+\textbf{$(i)$  Elaboración de la estructura base de la plataforma digital de la Red Sentir:}  Basados en el patrón de diseño MVC se crea la estructura base de los documentos de la plataforma, en esta base se define (crea) una carpeta templates, que contiene otra carpeta nombrada sitio donde se ubican de manera separada sub-carpetas que contienen las plantillas o maquetas para cada uno de los módulos que hacen parte en el proyecto. Dentro de la carpeta templates se incluye, en la raíz del directorio, el documento base.html que constituye el soporte de la presentación de la plataforma. Se define además el directorio static en donde se ubican todos los documentos estáticos de la plataforma, es decir, las imágenes, los contenidos audio visuales, los archivos de estilos .css, el código que se ejecutará en el lado del cliente es decir los documentos .js javascript y las construcciones de los juegos disponibles dentro de la plataforma. También se creó un directorio (o aplicación) por cada módulo con los respectivos controladores y modelos, así como un directorio (o proyecto) llamado red sentir para contener los documentos de configuraciones y urls del sistema. Un módulo de seguridad que contiene los controladores y modelos de usuario y perfil de usuario además de los métodos para la creación y edición de los usuarios.
+
+\textbf{$(ii)$  Settings.py:} El documento settings.py corresponde a toda la configuración de la plataforma de la Red Sentir, en el se relaciona la base de datos configurada en Postgresql, se configura la ruta raíz, la ruta estática, se configura el correo de comunicaciones, se agrega las diferentes aplicaciones y se redirecciona el login directamente a la línea de tiempo. El documento se encuentra en la ruta: redsentir/server.py.
+
+\textbf{$(iii)$ Creación de la relación de perfil de usuario en la base de datos con Postgresql:} La plataforma de la red sentir usa bases de datos relacionales en donde se debe crear cada una de las relaciones a través del Lenguaje Estructurado de Consultas por sus siglas en ingles SQL. \textbf{lo cual implicó la creación de .....???}
+
+\textbf{$(iv)$  Creación del formulario de registro:} Se elabora en lenguaje html y css un formulario de registro a través del cual los usuarios que ingresan a la plataforma pueden llenar toda la información correspondiente para la creación de su perfil, los datos básicos para llevar a cabo esto son: $(i)$ el nombre de usuario, $(ii)$ la fecha de nacimiento, $(iii)$ la contraseña, $(iv)$ el correo electrónico, $(v)$ el celular, $(vi)$ el sexo, y $(vii)$ la elección de un avatar. Todos estos datos lo identificará dentro del sistema. Es de especial importancia la fecha de nacimiento, ya que es a través de esta información que se hace un proceso de separación y consulta en la base de datos para la visualización diferenciada dentro de la plataforma digital de la Red Sentir, mostrando $2$ posibles vistas~\ref{fig:vista_plataforma}, una para los usuarios registrados menores de 19 años~\ref{fig:menores} y otra para los usuarios mayores~\ref{fig:mayores}.
+
+\textbf{$v$ Creación del formulario de autenticación:} Se elabora en lenguaje html y css un formulario de autenticación a través del cual los usuarios que ingresan a la plataforma se identifican con su usuario y contraseña correspondiente.
+
+\textbf{$(vi)$ Creación modelo de perfil de usuario:} Ya que el diseño de la plataforma sigue el MVC, es necesaria la implementación del modelo del perfil de usuario con los campos correspondientes en donde se define además el tipo de datos y los valores por defecto.
+
+\textbf{$(vii)$ Módulo administrativo:} El módulo administrativo permite controlar los demás módulos del sistema tal como el módulo de seguridad, que es donde se registran los usuarios de la plataforma, así como los grupos de permisos que se asignarán a dichos usuarios. El módulo administrativo se desarrolla al mismo tiempo que los demás módulos, ya que facilita la creación de entidades de prueba a través de los métodos que permiten crear, remover, editar y listar  las instancias de objetos en cada caso, el mismo cuenta con un menú de autenticación y autorización para la creación de los usuarios y grupos. Dentro de módulo también es posible administrar lo que se agrega en varios de los módulos existentes, permitiendo así controlar de manera más sencilla el contenido que se publica. Los módulos que pueden ser modificados desde el administrador, ya sea para cargar, eliminar o editar, son: $(i)$ preguntas frecuentes con su respectiva respuesta, $(ii)$ formación a través del poder agregar y editar los encuentros, $(iii)$ foros, $(iv)$ Planes de la Mesa, $(v)$ seguridad, $(vi)$ usuarios y grupos, y $(vii)$ servicios amigables. En la Figura~\ref{fig:admin} se muestra una breve vista del módulo de administrador de la Red Sentir.
+
+\textbf{$(viii)$ Novedades:} Se creó un módulo de novedades que funciona como una linea de tiempo en donde los jóvenes pueden participar a través de múltiples herramientas: texto,  audio, imagen o video. Uno de los valores agregados de este módulo, es que solo está disponible para los jóvenes, por lo que la interacción se da directamente entre ellos, lo que les permite y les da mayor confianza para opinar y expresarse. La Figura~\ref{fig:novedades} muestra la vista del módulo.
+
+\textbf{$(ix)$ Servicios amigables:} Se creó para los jóvenes un módulo de servicios amigables. Éste módulo consiste en una herramienta que posibilita y acerca a los adolescentes con los centros de salud municipales y las ayudas profesionales en temas de promoción y prevención. Se considera este modulo un mecanismo de transferencia tecnológica a hospitales ya que permite mejorar el acceso a los servicios de salud y la oportunidad en la atención, así como la posibilidad de que los jóvenes realicen veeduría y control a estos servicios mediante la calificación que le dan a los servicios que acceden. La Figura~\ref{fig:SA} muestra la vista del módulo. 
+
+\textbf{$(x)$ Preguntas Frecuentes:} El módulo de preguntas frecuentes fue creado para que los adolescentes encuentren fácilmente respuesta a preguntas que se vuelven comunes, estas preguntas se priorizan según la cantidad de veces en las que son consultadas por los jóvenes en los diferentes espacios. La figura~\ref{fig:FAQ} muestra la vista del módulo.
+
+\textbf{$(xi)$ Foros:} El módulo de foros se creó para que los usuarios de la plataforma puedan interactuar y preguntar directamente a expertos del área de salud o psicología quienes les pueden solucionar dudas que no encuentren dentro del módulo de preguntas frecuentes. Para hacer que el joven sienta confianza a la hora de participar en los foros se implementa  \textbf{el botón anónimo}, el cual permite participar en los foros de forma que no aparezca el nombre de usuario en los comentarios del foro. La figura~\ref{fig:foros} se puede observar como se ve el módulo de foros.
+
+\textbf{$(xii)$ Juegos:} Teniendo en cuenta las diferentes estrategias digitales orientadas a la educación, tal como se planteó en~\ref{videojuego}, dentro de la Red Sentir se proyectó la creación de un video que permitiera vincular la temática de sexualidad, y que a su vez les permite aprender divirtiéndose. Se programaron dos videojuegos para tratar y abordar estos temas desde dos enfoques diferentes, el primero de ellos es basado en el tipo de juego ``endless runner'', el juego se llama \textbf{Preventor} y la idea es evitar que los espermatozoides que van apareciendo toquen el óvulo el cual es manipulado por el jugador, el juego termina cuando la medida de energía llegue a $0$. El segundo se basa en ``castle defense'', y se llama \textbf{Dawn of Zoides}, en el cual la dinámica del juego consiste en evitar que los espermatozoides lleguen al castillo.  La figura~\ref{fig:juegos} muestra las vistas de los dos juegos disponibles dentro del proyecto de la Red Sentir.
+
+\textbf{$(xiii)$ Formación:} Se creó un módulo de formación en el que se relaciona el material y la metodología utilizada dentro de los semilleros, para que los profesores puedan replicar las estrategias para abordar el tema de la sexualidad con los estudiantes, ya que tienen a su disposición las guías realizadas por el componente de formación. Además, el módulo muestra las reseñas de los encuentros realizados en el que se dieron diálogos intergeneracionales. El módulo de formación se puede ver en la figura~\ref{fig:formacion}.
+
+\textbf{$(xiv)$ Mesa regional:} El módulo de mesa regional relaciona todos los compromisos a los que se llegó con las instituciones que participan de las mesas locales y regionales en los municipios que son parte de la Red Sentir, un ejemplo se muestra en la figura~\ref{fig:mesa}.
+
+\textbf{$(xv)$ Lineabase:} Dentro del módulo de lineabase se muestran los resultados obtenidos en el diagnóstico, aspectos socio-demográficos, actividades sociales, relaciones personales, salud sexual, plan de vida, análisis de sub-grupos y embarazo adolescente dentro de las regiones que comprende el proyecto. La forma en que se presenta el módulo se ve en la figura~\ref{fig:lineabase}.
+
+ \textbf{FALTA CONECTAR ESTA IDEA CON LA ANTERIOR}
+
+La estructura base del proyecto de la plataforma digital de la Red Sentir de acuerdo a la manera en como django organiza y dispone los directorios se muestra a continuación
+
+\fbox{ \parbox{0.85\linewidth}{
+\begin{list}{}{}
+\item	redsentir/
+	\begin{list}{}{}
+\item		manage.py
+\item		server.py
+\item		redsentir/
+		\begin{list}{}{}
+\item			\underline{\hspace{2mm}}init\underline{\hspace{2mm}}.py
+\item			settings.py
+\item			urls.py
+\item			wsgi.py
+		\end{list}
+\item faq/
+\item formacion/
+\item foro/
+\item lineabase/
+\item lineatiempo/
+\item mesa/
+\item seguridad/
+\item servicios/
+\item static/
+\item template/
+	\begin{list}{}{}
+	\item sitio/
+	\item base.html
+	\end{list}
+	\end{list}
+\end{list}
+}}\vspace{4mm}
+
+Cada una de las carpetas en las que esta dividido el proyecto corresponden a aplicaciones, las cuales contienen los siguientes archivos:
+
+\vspace{4mm}
+\fbox{ \parbox{0.85\linewidth}{
+\begin{list}{}{}
+\item		faq/
+		\begin{list}{}{}
+\item		\underline{\hspace{2mm}}init\underline{\hspace{2mm}}.py
+\item		admin.py
+\item		apps.py
+\item		migrations/
+			\begin{list}{}{}
+\item			\underline{\hspace{2mm}}init\underline{\hspace{2mm}}.py
+			\end{list}
+\item		models.py
+\item		test.py
+\item		urls.py
+\item		views.py
+		\end{list}
+\end{list}
+}}\vspace{4mm}
+
+
+%El desarrollo realizado por el componente digital dentro del proyecto de la Red Sentir se ha realizado de manera iterativa e incremental, lo que significa que el desarrollo de la misma está en constante mejora y adecuación de sus aplicaciones, además de incorporar nuevas aplicaciones realizadas a la medida. La constante interacción con los usuarios de la plataforma permite que se genere una realimentación por parte de ellos, buscando con esto una continua mejora de la plataforma digital.
+
+
+Dentro de los resultados obtenidos en el desarrollo del proyecto, y que se pueden visualizar en la plataforma digital se encuentran: $(i)$ una plataforma realizada a la medida en funcionamiento, $(ii)$ dos videojuegos en la plataforma, $(iii)$ materiales pedagógicos con acceso virtual, $(iv)$ $30$ foros virtuales para la participación de los adolescentes, $(iv)$ información del proyecto en la plataforma, $(v)$ manifestación de los compromisos de las alcaldías municipales, $(vi)$ vinculación de las instituciones prestadoras de servicios de los municipios, y $(vii)$ constante acompañamiento y solución de inquietudes a los jóvenes a través de la plataforma digital.
+
+La plataforma digital de la Red Sentir logró vincular en sus primeros seis meses de funcionamiento después de culminados los principales módulos, un total de 2600 usuarios.
+
+Para observar la aplicación web desarrollada por el componente digital de la Red Sentir, es necesario ingresar en el navegador~\url{www.redsentir.org}, allí se puede observar los diferentes resultados expuestos en el presente artículo.
+
+
+\begin{figure*}[tbp]
+  \centering
+	  \subfloat[]{\includegraphics[width=0.48\textwidth]{menor.png}\label{fig:menores}}
+	  \hspace{1mm}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth]{mayor.png}\label{fig:mayores}}
+  \caption{Vista de la plataforma digital según la edad del usuario. (a) Menor de 19 años, (b) mayor de 19 años.}
+  \label{fig:vista_plataforma}
+\end{figure*}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{admin.png}
+\caption{Módulo de administración de la Red Sentir.}
+\label{fig:admin}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{novedades.png}
+\caption{Linea de tiempo de la plataforma Red Sentir.}
+\label{fig:novedades}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{SA.png}
+\caption{Módulo de Servicios Amigables.}
+\label{fig:SA}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{FAQ.png}
+\caption{Módulo de Preguntas Frecuentes.}
+\label{fig:FAQ}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{foros.png}
+\caption{Módulo de foros de la Red Sentir.}
+\label{fig:foros}
+\end{figure}
+
+\begin{figure*}[tbp]
+  \centering
+	  \subfloat[]{\includegraphics[width=0.48\textwidth]{juego1.png}\label{fig:preventor}}
+	  \hspace{1mm}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth]{juego2.png}\label{fig:dawn}}
+  \caption{Juegos disponibles en la plataforma digital de la Red Sentir.}
+  \label{fig:juegos}
+\end{figure*}
+
+\begin{figure*}[tbp]
+  \centering
+	  \subfloat[]{\includegraphics[width=0.48\textwidth]{guias.png}\label{fig:guias}}
+	  \hspace{1mm}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth]{encuentros.png}\label{fig:encuentros}}
+  \caption{Módulo de formación disponible en la plataforma. (a) Guías de docentes, (b) encuentros locales.}
+  \label{fig:formacion}
+\end{figure*}
+
+\begin{figure*}[tbp]
+  \centering
+	  \subfloat[]{\includegraphics[width=0.48\textwidth]{planes.png}}
+	  \hspace{1mm}
+ 	  \subfloat[]{\includegraphics[width=0.48\textwidth]{planes1.png}}
+  \caption{Módulo Mesa Regional disponible en la plataforma. }
+  \label{fig:mesa}
+\end{figure*}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.48\textwidth]{resultados.png}
+\caption{Módulo de Linea base del proyecto.}
+\label{fig:lineabase}
+\end{figure}
+
+\section{CONCLUSIONES Y PERSPECTIVAS}\label{sec:conclusiones}
+Con la búsqueda actual de los gobiernos nacionales de generar una mayor inclusión en toda la comunidad y evitar los factores de riesgos en los que están inmersos muchas de las personas (sobre todo los más jóvenes), que terminan en muchos de los casos reflejado con consecuencias que pueden truncar el plan de vida de los jóvenes o de la misma manera perpetuar los ciclos de la pobreza en que los adolescentes se desarrollan. De igual manera, no es solo la situación económica la que influye en los procesos educativos de los adolescentes, sino también se ve influenciado por factores demográficos, sociales, culturales y uno de los más importantes el acceso a las TIC. Es así, que el equipo de la Red Sentir abordó uno de esos factores de riesgo como lo es la problemática del embarazo a temprana edad, para generar una estrategia de intervención para evitar el embarazo adolescente, haciendo énfasis en los planes de vida, los derechos, el reconocimiento del territorio, el cuidado del cuerpo, el aprendizaje y el uso de métodos anticonceptivos y el fortalecimiento de los sueños. El proceso llevado a cabo por el componente de formación se ve complementado con una plataforma virtual realizada por el componente digital, como una estrategia para vincular, reforzar, y también lograr un mayor alcance en cuanto a las personas que participaron directamente de los semilleros. La plataforma en si pretende también ser un apoyo a los colegios, que junto con las proyecciones del país en acercar a la mayor parte del territorio y a su vez generar una apropiación de las TIC, sobre todo en las comunidades rurales.
+
+Desde lo técnico, el uso de los diferentes frameworks, permitieron la programación de una plataforma virtual cuyo objetivo es el de crear confianza en los más jóvenes, al funcionar como una red social orientada directamente a trabajar, hablar y formar sobre los temas de sexualidad, para que los jóvenes obtengan información que les ayude a experimentar, descubrir y vivir la sexualidad de una manera responsable. Con el desarrollo de la plataforma digital, se pudo incorporar y mezclar tecnologías junto con los respectivos lenguajes utilizados (Django, cherrypy, HTML, CSS, JavaScript, Postgresql) que llevaron consecuentemente en buen termino a un resultado final reflejando las fortalezas y carácter interdisciplinar del equipo de la Red Sentir.
+
+Tanto los productos como los resultados obtenidos por el proyecto, arrojan un análisis positivo y satisfactorio en todos los aspectos y desde los diferentes componentes. Esto indica en si, el asentamiento de una base para continuar interviniendo en las comunidades en las que este factor de riesgo es alto, dejando en si un trabajo que puede ser extendido, complementado y replicado para las demás comunidades en los que se considere pertinente implementar la estrategia. Dentro de las funcionalidades que puede tener la plataforma digital, las mismas pueden ampliarse e incorporar nuevas herramientas, ya que esta es una tarea de crecimiento continuo que debe adaptarse a nuevas tecnologías, siendo un proceso iterativo e incremental, aunque precisamente es eso lo que puede verse como una oportunidad, ya que dentro de lo digital, la necesidad de introducir nuevas mejoras y nuevos contenidos que complementen lo ya implementado es lo que permiten que se genere una confianza y un retorno a la plataforma, entre las funcionalidades identificadas para seguir trabajando dentro de la plataforma se plantean:
+
+\begin{itemize}
+\item Crear continuamente contenido para los jóvenes, padres y actores institucionales.
+\item Volverla una herramienta masiva, que sea implementada en las instituciones educativas dentro de un ámbito nacional, sirviendo de apoyo en la enseñanza de la sexualidad.
+\item Vincular a los educadores para generar trabajo colaborativo, con procesos de confianza.
+\item Mejorar y agregar los juegos existentes dentro de la plataforma, incorporando para ello más personas preocupadas por un aprendizaje con diversión, esto tiene que ver con las nuevas estrategias de e-learning, desde las cuales se ha demostrado que cuanto más entretenido se encuentre el estudiante más información puede retener, lo que conlleva que el estudiante puede aprender más y a su vez generarles una apropiación de las TIC de manera eficiente dentro de los entornos educativos.
+\item Aumentar la dificultad de los juegos a medida que se va avanzando y consiguiendo puntos. Dicha dificultad puede verse reflejada en mayor velocidad, aparición de nuevos personajes, uso de diferentes herramientas, movimientos, inclusión de nuevas animaciones, inclusión de información educativa o nuevos gráficos.
+\item Disponer de una tienda para compra de elementos que ayuden al autocuidado y a la prevención del embarazo (Anticonceptivos).
+\item Tener un registro de los puntajes obtenidos en los juegos dentro de la base de datos, lo que permitirá tener una mejor estadística de los usuarios y nivel de juego, para realizar tratamientos posteriores.
+\end{itemize}
+
+\bibliographystyle{IEEEtran}
+\bibliography{biblio_digital}
+\end{document}
