@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: digital_IEEE.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: biblio_digital.bib
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing institution in unesco
+Warning--missing school in Wik2014
+
+Done.
+You've used 16 entries,
+            4024 wiz_defined-function locations,
+            899 strings with 9851 characters,
+and the built_in function-call counts, 7358 in all, are:
+= -- 605
+> -- 117
+< -- 24
++ -- 60
+- -- 24
+* -- 299
+:= -- 1292
+add.period$ -- 32
+call.type$ -- 16
+change.case$ -- 15
+chr.to.int$ -- 48
+cite$ -- 18
+duplicate$ -- 582
+empty$ -- 685
+format.name$ -- 29
+if$ -- 1625
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 121
+newline$ -- 73
+num.names$ -- 16
+pop$ -- 296
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 600
+stack$ -- 0
+substring$ -- 137
+swap$ -- 390
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 16
+warning$ -- 2
+while$ -- 25
+width$ -- 18
+write$ -- 161
+(There were 2 warnings)
