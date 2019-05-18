@@ -1,183 +1,57 @@
-\documentclass[10pt,journal,compsoc]{IEEEtran}
+% Formato modificado por CORUM para la escritura de artículo
 
-\ifCLASSOPTIONcompsoc
-  % The IEEE Computer Society needs nocompress option
-  % requires cite.sty v4.0 or later (November 2003)
-  \usepackage[nocompress]{cite}
-\else
-  % normal IEEE
-  \usepackage{cite}
-\fi
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-\ifCLASSINFOpdf
-   \usepackage[pdftex]{graphicx}
-  \graphicspath{ {figuras/} }
-   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-
-   \usepackage[dvips]{graphicx}
-   \graphicspath{ {figuras/} }
-   \DeclareGraphicsExtensions{.eps}
-\fi
-
-% *** MATH PACKAGES ***
-\usepackage{amsmath}
-\usepackage{mdwmath}
-\usepackage{mdwtab}
-
-% *** SUBFIGURE PACKAGES ***
-\ifCLASSOPTIONcompsoc
-  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
-\else
-  \usepackage[caption=false,font=footnotesize]{subfig}
-\fi
-
-
-\ifCLASSOPTIONcaptionsoff
-  \usepackage[nomarkers]{endfloat}
- \let\MYoriglatexcaption\caption
- \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-\fi
-
-\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
-pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
-colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
-pdftitle={Digital Platform of Red Sentir},
-pdfsubject={Paper},
-pdfauthor={John A. Gómez},
-pdfkeywords={Colombia, Sexual education, Digital platform, e-learning}}
-\ifCLASSINFOpdf
-\usepackage[\MYhyperrefoptions,pdftex]{hyperref}
-\else
-\usepackage[\MYhyperrefoptions,breaklinks=true,dvips]{hyperref}
-\usepackage{breakurl}
-\fi
+% Si es formato ieee descomentar la siguiente linea
+\documentclass[journal,transmag]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-%\usepackage{hyperref}
+%\usepackage[colorlinks,hyperindex,linkcolor=red,urlcolor=blue]{hyperref}
+\usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{subfig}
 \usepackage{url}         
 
 \usepackage{epsfig}
 
-%\graphicspath{ {figuras/} }
-
-% correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
-
+%ruta para guardar las imagenes
+\graphicspath{ {figuras/} }
 
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
 \title{Educational Platform for Sexuality, for the Project ``Red Sentir... Con-ciencia juvenil''}
 
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
-% use \thanks{} to gain access to the first footnote area
-% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
-% was not built to handle multiple paragraphs
-%
-%
-
-\author{John~A.~Gómez~Múnera, Alejandro~Giraldo% <-this % stops a space
-\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem John~A.~Gómez and Alejandro~Giraldo are researcher of
-Corporación de Estudiantes Universitarios y profesionales de Marinilla (CORUM) and of Grupo de Desarrollo Rural in Instituto Tecnológico COREDI, at Marinilla, Colombia.\protect\\
-% note need leading \protect in front of \\ to get a newline within \thanks as
-% \\ is fragile and will error, could use \hfil\break instead.
-E-mail: gomezmunera@corum.org.co
-%\IEEEcompsocthanksitem J. Doe and J. Doe are with Anonymous University.
-}% <-this % stops a space
-\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
-
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
+\author{\IEEEauthorblockN{J. A. Gómez Múnera\IEEEauthorrefmark{1,2}, and
+A. Giraldo\IEEEauthorrefmark{1,2}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Corporación Estudiantes Universitarios y Profesionales de Marinilla (CORUM) \\Calle 30 San José N$\circ$ 25-118, Marinilla - Antioquia, Colombia}
+\IEEEauthorblockA{\IEEEauthorrefmark{2} Grupo de Desarrollo Rural, Instituto Tecnológico COREDI \\ Calle 30 N$\circ$ 36-11, Marinilla - Antioquia, Colombia
+\\ \href{mailto:gomezmunera@corum.org.co}{gomezmunera@corum.org.co}, \href{mailto:alejo@corum.org.co}{alejo@corum.org.co}}
+%\thanks{Manuscript received December 1, 2018; revised August 26, 2015. 
+%Corresponding author: J. A. Gómez(email: gomezmunera@corum.org.co)}}
+}
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Advanced Demo of IEEEtran.cls for IEEE Computer Society Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
+%\markboth{Transactions on Education ,~Vol.~14, No.~8, December~2018}%
+%{Gómez \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Transactions on Magnetics Journals}
 
-% The publisher's ID mark at the bottom of the page is less important with
-% Computer Society journal papers as those publications place the marks
-% outside of the main text columns and, therefore, unlike regular IEEE
-% journals, the available text space is not reduced by their presence.
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
-% or like this to get the Computer Society new two part style.
-%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2015 IEEE}%
-%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark (Computer Society journal
-% papers don't need this extra clearance.)
+% make the title area
+\maketitle
 
-\IEEEtitleabstractindextext{%
 \begin{abstract}
-Within the national development plan 2014-2018 of Colombia considered education as a fundamental pillar, where the same plan served as a mechanism that would allow social equality and thus levelling the possibilities of all Colombians. Taking this into account, and considering the accelerated increase in the use of information technologies and the communication, along with the possibility of providing more coverage in education, such as ``La Corporación de estudiantes universitarios y profesionales de Marinilla (CORUM)'' development and implemented a project called ``Red Sentir ... Con-ciencia Juvenil'' focused on the prevention of adolescent pregnancy, strengthening of the life plan, critical thinking, autonomy and making conscious decisions. The project derives in three fundamental components that constitute a process of integral formation with young people between 10 and 19 to us from the eastern Antioquia, that allows them to interact and relate with parents, teachers and institutional agents. The components mentioned are: $(i)$ formation and socialization, $(ii)$ regional bureau, and $(iii)$ a digital platform. In this article, emphasis is placed on the strategies and developments made by the digital component in the creation of a virtual environment that allows linking experts, teachers, youth, parents and health institutions. For the development, a social network was created through different technologies, which involve web development, creation of relational database, server configuration and development of video game. All this possible through different languages of programming.
+\textbf{\textit{Abstract}}---Within the national development plan 2014-2018 of Colombia considered education as a fundamental pillar, where the same plan served as a mechanism that would allow social equality and thus levelling the possibilities of all Colombians. Taking this into account, and considering the accelerated increase in the use of information technologies and the communication, along with the possibility of providing more coverage in education, such as ``La Corporación de estudiantes universitarios y profesionales de Marinilla (CORUM)'' development and implemented a project called ``Red Sentir ... Con-ciencia Juvenil'' focused on the prevention of adolescent pregnancy, strengthening of the life plan, critical thinking, autonomy and making conscious decisions. The project derives in three fundamental components that constitute a process of integral formation with young people between 10 and 19 to us from the eastern Antioquia, that allows them to interact and relate with parents, teachers and institutional agents. The components mentioned are: $(i)$ formation and socialization, $(ii)$ regional bureau, and $(iii)$ a digital platform. In this article, emphasis is placed on the strategies and developments made by the digital component in the creation of a virtual environment that allows linking experts, teachers, youth, parents and health institutions. For the development, a social network was created through different technologies, which involve web development, creation of relational database, server configuration and development of video game. All this possible through different languages of programming.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Education platform, sexual education, teenage pregnancy, e-learning, family planning health service, young friendly health service, sexual health services and reproductive.
-\end{IEEEkeywords}}
+Education platform, sexual education, teenage pregnancy, family planning health service, young friendly health service, sexual health services and reproductive.
+\end{IEEEkeywords}
 
-\maketitle
-
-
-% To allow for easy dual compilation without having to reenter the
-% abstract/keywords data, the \IEEEtitleabstractindextext text will
-% not be used in maketitle, but will appear (i.e., to be "transported")
-% here as \IEEEdisplaynontitleabstractindextext when compsoc mode
-% is not selected <OR> if conference mode is selected - because compsoc
-% conference papers position the abstract like regular (non-compsoc)
-% papers do!
-\IEEEdisplaynontitleabstractindextext
-% \IEEEdisplaynontitleabstractindextext has no effect when using
-% compsoc under a non-conference mode.
-
+%\IEEEdisplaynontitleabstractindextext
 \IEEEpeerreviewmaketitle
 
-\ifCLASSOPTIONcompsoc
-\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
-\else
-\section{Introduction}
-\label{sec:introduction}
-\fi
+\section{INTRODUCTION}
 
-\IEEEPARstart{I}n Colombia, fertility in adolescence became in a public health problem, when from 1990 (for adolescents between 15 and 19 years old) measures of $12.8\%$, presenting in the later years a tendency systematically increasing that finds the maximum value in 2005 $(20.5\%)$. For the year 2010 ($19.5\%$) a trend was achieved-decreasing that continues to be presented in 2015 with a measure of $17.4\%$. It is expected that by the year 2021 according to the adjustment made to the Ten-Year Public Health Plan 2012-2021 we reach the reduction of that percentage to a $15\%$~\cite{Pro2015}. By such a reason, Colombia was raised in the development objectives of the Millennium (ODM) have cups of teen pregnancy by below $15\%$, however, the percentages reached were very far from those figures, which makes it necessary to redouble the efforts to reduce pregnancy in adolescents. In 2013, Colombia registered 6,423 births in women among 10 and 14 years and almost 150 thousand in women between 15 and 19 years, a figure that is high if you consider that together they represent $23.5\%$ of all birth~\cite{PNUD2015}.
+In Colombia, fertility in adolescence became in a public health problem, when from 1990 (for adolescents between 15 and 19 years old) measures of $12.8\%$, presenting in the later years a tendency systematically increasing that finds the maximum value in 2005 $(20.5\%)$. For the year 2010 ($19.5\%$) a trend was achieved-decreasing that continues to be presented in 2015 with a measure of $17.4\%$. It is expected that by the year 2021 according to the adjustment made to the Ten-Year Public Health Plan 2012-2021 we reach the reduction of that percentage to a $15\%$~\cite{Pro2015}. By such a reason, Colombia was raised in the development objectives of the Millennium (ODM) have cups of teen pregnancy by below $15\%$, however, the percentages reached were very far from those figures, which makes it necessary to redouble the efforts to reduce pregnancy in adolescents. In 2013, Colombia registered 6,423 births in women among 10 and 14 years and almost 150 thousand in women between 15 and 19 years, a figure that is high if you consider that together they represent $23.5\%$ of all birth~\cite{PNUD2015}.
 
 Efforts to reduce adolescent pregnancy have been most significant in the most socially advantaged groups, in opposition to the less favoured, causing expand socio-economic gaps. This reflects the need to make greater efforts of the policy of prevention of teenage pregnancy in lesser groups favoured socially and where the greatest prevalence of adolescent pregnancy~\cite{Pro2015, Pro2015II}: rural areas, less educated, situations of poverty.
 
@@ -194,6 +68,10 @@ The project works with 3 components that are: $(i)$ Digital Platform, $(ii)$ For
 %On the part of the Regional Bureau it is related through the visualization of each one commitments of the municipalities with the processes of the ``Red Sentir''.
 
 The strategy of the Sentir Network was based on working on the determinants of teenage pregnancy, with which changes can be achieved in the initial situation and reach reductions in teen pregnancy rates in the region from eastern Antioquia. This is because it includes a methodology where the activities that are carried out promote interaction with young people and their environments, which configures a determining factor in favouring a relationship of trust and quality with the young person by a trainer who can act at the motivational level and in turn serve as a reference and/or model. This provides a peaceful environment for young people, where they take ownership of the topics discussed and allow them interact safely to address important aspects in order to encourage assertive behavioural changes. 
+
+%Despite the need to implement ICT by expanding its access and appropriation, it is indisputable that there are abysmal inequalities in terms of the possibility of access to same in Latin America, which make up a gap digital in two dimensions: On the other hand, the international gap existing where there is a Latin American backwardness regarding the progress of ICT in the most developed countries and on the other, the inequalities within the same countries Latin American countries usually related to the level of income, the quality of life and family cycles~\cite{Sunkel2006}, decrease this gap requires a relevant integration of ICT's with education as well as the use, update, and interpenetration of specific sociocultural contexts.
+%
+%In Colombia, according to what is established in~\cite{Plan2014}, wanted promote the use, understanding, appropriation and interaction of ICTs, thus seeking to generate guarantees for society to access different services, doing in this way that the people of the country can be an active part of society of knowledge. Giving preponderance to the use of ICT and linking this with educational issues, it will be possible to reduce the socio-economic gaps and give young people opportunities for an integral development with quality of life. 
 
 The main features of the platform ``Red Sentir'', that makes it different from other websites or platforms virtual identities (such as those of the protection ministry) and health of the Colombian government~\cite{PagGob2018}, that of the secretary of health of Bogota in alliance with the Foundation Santa Fe de Bogota and Profamilia~\cite{Sexperto2018}, or the Frequent Questions about health~\cite{1DOC3}) are: $(i)$ pleasantly generated content for adolescents and young people, $(ii)$ active participation interaction among youth, $(iii)$ video games for the compression of sexuality, $(iv)$ discretion of the environment to encourage the participation of young people by offering the possibility of participating anonymously, and $(v)$ the deployment of different interfaces according to the interests of each public (young or adult).
 
@@ -226,7 +104,7 @@ To link to hospitals, municipal administrations and directives from schools to t
 
 \item Open software and Creative Commons: The project Red Sentir seeks to solve a social problematic, it is considered the use of open software as a fundamental element since it can be easily replicated and improved by others.
 \end{itemize}
- 
+
 \subsection{Digital platform}
 Taking into account the Creative Commons format for which the platform was designed, and based on the concept of open Software, Python was selected for its Open Source feature, as it is a programming language dynamic and object-oriented, for its integration with others languages and tools, and also for being multi-paradigm and multi platform.
 
@@ -393,43 +271,9 @@ Both the products and the results obtained by the project, they give a positive 
 \item Improve and update existing video games within of the platform, increase the difficulty of the video games as they become is progressing and getting points. Said difficulty it can be reflected in higher speed, apparition of new characters, use of different tools, movements, including new animations, inclusions of educational information or new graphs.
 \item Have a commercial strategy for purchasing elements that help self-care and prevention
 of pregnancy (Contraceptives), with the aim of being offered through the platform and generate sustainability financial for it.
-\item Have a record of the scores obtained in the video games within the database, which would allow having a better statistic of the users and level of play, for perform subsequent treatments.
+%\item Have a record of the scores obtained in the video games within the database, which would allow having a better statistic of the users and level of play, for perform subsequent treatments.
 \end{itemize}
-
-% use section* for acknowledgment
-\ifCLASSOPTIONcompsoc
-  % The Computer Society usually uses the plural form
-  \section*{Acknowledgments}
-\else
-  % regular IEEE prefers the singular form
-  \section*{Acknowledgment}
-\fi
-
-The authors would like to thank Inter-American Development Bank (IADB) for the support and funding, also to Corporación de Estudiantes Universitarios y profesionales de Marinilla (CORUM) for accompaintment and the teaching.
-
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
 
 \bibliographystyle{IEEEtran}
 \bibliography{biblio_digital}
-
-
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{IEEE.jpg}}]{John~A.~Gómez~Múnera}
-was born in Medellín, Colombia in 1988. He received the Electronic Engineering degree from the Universidad de Antioquia, at Medellín. In 2011, and the doctorate in Chemical Technology degree from
-Universidad del Litoral, at Santa Fe, Argentina in 2017. He is currently an Assistant Professor from the Universidad de Antioquia and also is researcher in Corporación de Estudiantes Universitarios y profesionales de Marinilla (CORUM) and of Instituto Tecnológico COREDI, at Marinilla, Colombia. His main research interest include aspects of nonlinear systems, optimal control, optimization, videogame development and parallel computing.
-\end{IEEEbiography}
-
-% if you will not have a photo at all:
-\begin{IEEEbiography}{Alejandro Giraldo}
-Biography text here.
-\end{IEEEbiography}
-
-% if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{Alejandro Giraldo}
-Biography text here.
-\end{IEEEbiographynophoto}
-
 \end{document}
-
-
